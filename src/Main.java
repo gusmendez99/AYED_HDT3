@@ -8,11 +8,18 @@ public class Main {
     public static void main(String args[]){
 
         writeFile();
-        NumberList[] list = readFile();
+        Number[] numberList;
+        try {
+            numberList = readFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
 
     }
 
-    private static NumerList[] readFile() throws IOException {
+    private static Number[] readFile() throws IOException {
         File f = new File(UNSORTED_FILE_PATH);
         FileReader fr = null;
         try {
@@ -22,17 +29,17 @@ public class Main {
         }
         BufferedReader br  = new BufferedReader(fr);
 
-        NumerList[] list = new NumberList[3000];
+        Number[] numberList = new Number[3000];
         int counter = 0;
 
-        while ((br.readLine())!=null) {
-            list[counter] = new Number(Integer.parseInt(br.readLine()));
+        while ((br.readLine()) != null) {
+            numberList[counter] = new Number(Integer.parseInt(br.readLine()));
             counter++;
         }
 
         br.close();
 
-        return list;
+        return numberList;
 
     }
 
