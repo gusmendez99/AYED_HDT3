@@ -43,38 +43,26 @@ public class Main {
 
     }
 
-    private static void writeFile(){
-        Boolean isDone = true;
-        File f = new File(UNSORTED_FILE_PATH);
-        FileWriter fr = null;
+    private static void writeFile() {
         Random random = new Random();
 
-        try {
-            fr = new FileWriter(f);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        BufferedWriter br  = new BufferedWriter(fr);
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(UNSORTED_FILE_PATH), "utf-8"))) {
 
-        while (isDone) {
-
-            if (!isDone) {
-                try {
-
-                    for(int i=0; i < 3000; i++) {
-                        // nextInt is normally exclusive of the top value,
-                        // so add 1 to make it inclusive
-                        br.write(random.nextInt(10000));
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
+            for (int i = 0; i < 3000; i++) {
+                // nextInt is normally exclusive of the top value,
+                // so add 1 to make it inclusive
+                writer.write(String.valueOf(random.nextInt(10000)));
+                ((BufferedWriter) writer).newLine();
             }
 
 
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
-
 }
