@@ -11,6 +11,7 @@ public class Main {
         Number[] numberList;
         try {
             numberList = readFile();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

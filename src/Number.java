@@ -6,7 +6,12 @@ public class Number implements Comparable {
     @Override
     public int compareTo(Object o) {
         int result;
-        result = value.compareTo((Integer)o);
+        Number objectAsNumber = (Number)o;
+        result = value.compareTo(objectAsNumber.getValue());
         return result;
+    }
+
+    public Integer getValue() {
+        return value;
     }
 }
