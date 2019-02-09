@@ -1,5 +1,3 @@
-package Sorts;
-
 public class MergeSort {
     public static void mergeSort(Comparable[] a)
     {

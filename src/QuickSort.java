@@ -1,4 +1,3 @@
-package Sorts;
 
 public class QuickSort{
     public static void quickSort(Comparable[] vector, int izquierda, int derecha) {
@@ -20,7 +19,7 @@ public class QuickSort{
             //se aumenta el valor de i
             //cuando este loop se detenga, el elemento en vector[i]
             //es mayor a pivote y deberá ir a su derecha
-            while (vector[i].compareTo(pivote) <= 0 && i < j) {
+            while (vector[i].compareTo(pivote) <= 0  && i < j) {
                 i++;
             }
             //mientras que el elemento vector[j] sea mayor al pivote

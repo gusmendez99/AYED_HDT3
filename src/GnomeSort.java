@@ -1,5 +1,3 @@
-package Sorts;
-
 public class GnomeSort {
     public static void gnomeSort(Comparable[] list) {
         for (int index = 1; index < list.length; ) {

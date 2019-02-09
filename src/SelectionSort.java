@@ -1,5 +1,3 @@
-package Sorts;
-
 public class SelectionSort {
     public static void selectionSort(Comparable[] list) {
         int min;
