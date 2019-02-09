@@ -7,10 +7,27 @@ public class Main {
 
     public static void main(String args[]){
 
+        //TODO: remove this part, it's just for tests.
+        Number num1 = new Number(2);
+        Number num2 = new Number(1);
+        Number num3 = new Number(3);
+        Number num4 = new Number(3);
+        Number num5 = new Number(4);
+        Number[] numberss = new Number[5];
+        numberss[0] = num1;
+        numberss[1] = num2;
+        numberss[2] = num3;
+        numberss[3] = num4;
+        numberss[4] = num5;
+        SelectionSort.selectionSort(numberss);
+        for (int i = 0; i < 5; i++){
+            System.out.println(numberss[i].getValue().toString());
+        }
         writeFile();
         Number[] numberList;
         try {
             numberList = readFile();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
