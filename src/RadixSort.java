@@ -50,7 +50,7 @@ public class RadixSort {
 
     // The main function to that sorts arr[] of size n using
     // Radix Sort
-    public void radixsort(Comparable arrayOfComparables[], int n) {
+    public void radixSort(Comparable arrayOfComparables[], int n) {
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             Number number = (Number) arrayOfComparables[i];
@@ -72,7 +72,7 @@ public class RadixSort {
             System.out.print(arr[i] + " ");
     }
 
-    private Comparable[] getFinalArray() {
+    public Comparable[] getFinalArray() {
         return this.finalArray;
     }
 }
