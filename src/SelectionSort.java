@@ -1,18 +1,21 @@
 public class SelectionSort {
-    public static void selectionSort(Comparable[] list) {
+    public static void selectionSort(Comparable[] numberList) {
+        //smallest value
         int min;
+        //temporal mutable value
         Comparable temp;
 
-        for (int index = 0; index < list.length - 1; index++) {
+        //takes the min as the lowest number posbile and increments to swap that value later.
+        for (int index = 0; index < numberList.length - 1; index++) {
             min = index;
-            for (int scan = index + 1; scan < list.length; scan++)
-                if (list[scan].compareTo(list[min]) <= 0)
+            for (int scan = index + 1; scan < numberList.length; scan++)
+                if (numberList[scan].compareTo(numberList[min]) <= 0)
                     min = scan;
 
             // Swap the values
-            temp = list[min];
-            list[min] = list[index];
-            list[index] = temp;
+            temp = numberList[min];
+            numberList[min] = numberList[index];
+            numberList[index] = temp;
         }
     }
 }

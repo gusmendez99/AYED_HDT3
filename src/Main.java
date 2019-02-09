@@ -6,31 +6,28 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Main {
+/**
+ * date 02/08/2019
+ * @author  Gustavo Andrés, Carné 18500
+ * @author  Luis Urbina, Carné 18473
+ * This program is designed to run automatically, no user intervention needed.
+ * It generates 3000 random numbers and wtrite them into a .txt file
+ * After that, it reads the previusly generated .txt file and almacenates each one of
+ * the numbers in a list of Number-type Objects.
+ * That list is passed to 5 different types of sorts, that sort the numbers.
+ */
 
+public class Main {
+    //name of the generated txt
     public static String UNSORTED_FILE_PATH = "generated.txt";
 
     public static void main(String args[]){
-
-        //TODO: remove this part, it's just for tests.
-        /*Number num1 = new Number(2);
-        Number num2 = new Number(1);
-        Number num3 = new Number(3);
-        Number num4 = new Number(3);
-        Number num5 = new Number(4);
-        Number[] numberss = new Number[5];
-        numberss[0] = num1;
-        numberss[1] = num2;
-        numberss[2] = num3;
-        numberss[3] = num4;
-        numberss[4] = num5;
-
-        for (int i = 0; i < 5; i++){
-            System.out.println(numberss[i].getValue().toString());
-        }*/
-        writeFile();
-        Number[] numberList;
+        writeFile(); //writes the file locally
+        Number[] numberList; //almacenates the Number-type Objects
         try {
+            /**
+             * numberList gets the value of readFile() Method and all sorts are made one after another.
+             */
             numberList = readFile();
             GnomeSort.gnomeSort(numberList);
             QuickSort.quickSort(numberList,0, numberList.length - 1);
@@ -51,6 +48,11 @@ public class Main {
 
     }
 
+    /**
+     *
+     * @return numberList (A Number-Type List)
+     * @throws IOException failure in one of the characters of the txt file
+     */
     private static Number[] readFile() throws IOException {
         Number[] numberList = new Number[3000];
         final AtomicInteger index = new AtomicInteger();
@@ -70,6 +72,9 @@ public class Main {
 
     }
 
+    /**
+     * Writes file locally with a for loop until 3000 numbers are written in the file.
+     */
     private static void writeFile() {
         Random random = new Random();
 

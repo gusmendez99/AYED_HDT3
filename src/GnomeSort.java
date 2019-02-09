@@ -1,12 +1,12 @@
 public class GnomeSort {
-    public static void gnomeSort(Comparable[] list) {
-        for (int index = 1; index < list.length; ) {
-            if (list[index - 1].compareTo(list[index]) <= 0) {
+    public static void gnomeSort(Comparable[] numberList) {
+        for (int index = 1; index < numberList.length; ) {
+            if (numberList[index - 1].compareTo(numberList[index]) <= 0) {
                 ++index;
             } else {
-                Comparable tempVal = list[index];
-                list[index] = list[index - 1];
-                list[index - 1] = tempVal;
+                Comparable tempVal = numberList[index];
+                numberList[index] = numberList[index - 1];
+                numberList[index - 1] = tempVal;
                 --index;
                 if (index == 0) {
                     index = 1;
